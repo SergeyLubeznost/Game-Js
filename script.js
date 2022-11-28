@@ -15,6 +15,8 @@ if (isNaN(maxValue) || maxValue ==="" ){
 
 if (maxValue > 999 || minValue< -999){
     alert(`Загадайте любое целое число от -999 до 999, а я его угадаю`);
+    minValue = minValue < parseInt (-999 ) ? parseInt(( -999 )) : minValue;
+    maxValue = maxValue > parseInt (999 ) ? parseInt(( 999 )) : maxValue;
 }else{
     alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
 }
@@ -30,14 +32,14 @@ orderNumberField.innerText = orderNumber;
 answerField.innerText = `Вы загадали число ${answerNumber }?`;
 
 
-
+/*
 if (minValue) {
     minValue = minValue < parseInt (-999 ) ? parseInt(( -999 )) : minValue;
 }
 if (maxValue) {
     maxValue = maxValue > parseInt (999 ) ? parseInt(( 999 )) : maxValue; 
 }
-
+*/
  document.getElementById('btnRetry').addEventListener('click', function () {
         minValue = 0;
         maxValue = 100;
