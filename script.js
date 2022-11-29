@@ -13,7 +13,7 @@ if (isNaN(maxValue) || maxValue ==="" ){
     maxValue = Number("100");
 }
 
-if (maxValue > 999 || minValue< -999){
+if (maxValue-1 > 999 || minValue< -999){
     alert(`Загадайте любое целое число от -999 до 999, а я его угадаю`);
     minValue = minValue < parseInt (-999 ) ? parseInt(( -999 )) : minValue;
     maxValue = maxValue > parseInt (999 ) ? parseInt(( 999 )) : maxValue;
@@ -31,19 +31,10 @@ const answerField = document.getElementById('answerField');
 orderNumberField.innerText = orderNumber;
 answerField.innerText = `Вы загадали число ${answerNumber }?`;
 
-
-/*
-if (minValue) {
-    minValue = minValue < parseInt (-999 ) ? parseInt(( -999 )) : minValue;
-}
-if (maxValue) {
-    maxValue = maxValue > parseInt (999 ) ? parseInt(( 999 )) : maxValue; 
-}
-*/
  document.getElementById('btnRetry').addEventListener('click', function () {
-        minValue = 0;
+       /* minValue = 0;
         maxValue = 100;
-        orderNumber = 0;
+        orderNumber = 0;*/
         location.reload();
 })
 
@@ -84,7 +75,7 @@ document.getElementById('btnOver').addEventListener('click', function () {
 
 document.getElementById('btnLess').addEventListener('click', function () {
     if (gameRun){
-        if (minValue === maxValue -1){
+        if (minValue >= maxValue -1){
             const phraseRandom = Math.round( Math.random()*2);
             console.log(phraseRandom)
             /*const answerPhrase = (phraseRandom === 1) ?
@@ -109,9 +100,10 @@ document.getElementById('btnLess').addEventListener('click', function () {
             maxValue = answerNumber  -1;
             console.log(maxValue)
             answerNumber  = Math.floor((minValue + maxValue) / 2);
+            console.log(answerNumber)
             orderNumber++;
             orderNumberField.innerText = orderNumber;
-            answerField.innerText = `Вы загадали число ${answerNumber}?\n\u{1F62C}`;
+            answerField.innerText = `Вы загадали число ${answerNumber}?`;
         }
     }
 })
