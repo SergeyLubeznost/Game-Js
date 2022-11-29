@@ -13,7 +13,7 @@ if (isNaN(maxValue) || maxValue ==="" ){
     maxValue = Number("100");
 }
 
-if (maxValue-1 > 999 || minValue< -999){
+if (maxValue > 999 || minValue< -999){
     alert(`Загадайте любое целое число от -999 до 999, а я его угадаю`);
     minValue = minValue < parseInt (-999 ) ? parseInt(( -999 )) : minValue;
     maxValue = maxValue > parseInt (999 ) ? parseInt(( 999 )) : maxValue;
