@@ -18,8 +18,8 @@ if (maxValue > 999 || minValue< -999 || maxValue < - 999 || minValue > 999){
   
     minValue = minValue < parseInt (-999 ) ? parseInt(( -999 )) : minValue;
     maxValue = maxValue > parseInt (999 ) ? parseInt(( 999 )) : maxValue;
-    minValue = minValue > parseInt (999 ) ? parseInt(( 999 )) : minValue;
-    maxValue = maxValue < parseInt (-999 ) ? parseInt(( -999 )) : maxValue;
+    minValue = minValue > parseInt (999 ) ? parseInt(( -999 )) : minValue;
+    maxValue = maxValue < parseInt (-999 ) ? parseInt(( 999 )) : maxValue;
     alert(`Загадайте любое целое число от -999 до 999, а я его угадаю`);
 }else{
     alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
