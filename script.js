@@ -8,15 +8,19 @@ if (isNaN(minValue) || minValue ==="" ){
 }
 
 let maxValue = parseInt(prompt('Максимальное знание числа для игры','999'));
+console.log(maxValue)
 if (isNaN(maxValue) || maxValue ==="" ){
     console.log(maxValue)
     maxValue = Number("100");
 }
 
-if (maxValue > 999 || minValue< -999){
-    alert(`Загадайте любое целое число от -999 до 999, а я его угадаю`);
+if (maxValue > 999 || minValue< -999 || maxValue < - 999 || minValue > 999){
+  
     minValue = minValue < parseInt (-999 ) ? parseInt(( -999 )) : minValue;
     maxValue = maxValue > parseInt (999 ) ? parseInt(( 999 )) : maxValue;
+    minValue = minValue > parseInt (999 ) ? parseInt(( 999 )) : minValue;
+    maxValue = maxValue < parseInt (-999 ) ? parseInt(( -999 )) : maxValue;
+    alert(`Загадайте любое целое число от -999 до 999, а я его угадаю`);
 }else{
     alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
 }
@@ -32,9 +36,9 @@ orderNumberField.innerText = orderNumber;
 answerField.innerText = `Вы загадали число ${answerNumber }?`;
 
  document.getElementById('btnRetry').addEventListener('click', function () {
-       /* minValue = 0;
+       minValue = 0;
         maxValue = 100;
-        orderNumber = 0;*/
+        orderNumber = 0;
         location.reload();
 })
 
